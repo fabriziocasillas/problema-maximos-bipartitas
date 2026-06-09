@@ -1,0 +1,59 @@
+El programa se implementó en Java 11 y recibe como entrada un archivo de texto ".txt" que representa una gráfica bipartita.
+
+//Compilación
+
+Desde la terminal, ubicándose en la carpeta donde se encuentra el archivo `MatchingBipartito.java`, se ejecuta:
+
+`javac MatchingBipartito.java`
+
+Una vez compilado, el programa se ejecuta indicando como argumento el archivo de entrada:
+
+`java MatchingBipartito archivo.txt`
+
+Para nuestro ekjemplo es:
+
+`java MatchingBipartito Ejemplo.txt`
+
+
+//Formato del archivo de entrada
+
+La primera línea del archivo contiene dos enteros: |X| |Y|
+donde:
+
+`|X|` es el número de vértices de la primera partición.
+`|Y|` es el número de vértices de la segunda partición.
+
+Las siguientes |X| líneas describen las aristas de la gráfica bipartita. La línea i contiene los vértices de Y adyacentes al vértice Xi.
+
+Por ejemplo:
+
+7 7
+1 2 3
+2 5
+7
+2 6
+5 4
+2 5
+3 6
+
+representa la gráfica:
+
+XA → Y1, Y2, Y3
+XB → Y2, Y5
+XC → Y7
+XD → Y2, Y6
+XE → Y5, Y4
+XF → Y2, Y5
+XG → Y3, Y6
+
+
+//Salida del programa
+
+El programa construye la red de flujo correspondiente, ejecuta el algoritmo de Edmonds-Karp y obtiene un apareamiento máximo de la gráfica bipartita.
+
+La salida incluye:
+
+El tamaño del apareamiento máximo encontrado.
+Las aristas que forman el apareamiento.
+Los vértices de ambas particiones que no pudieron ser emparejados (si existen).
+Un mensaje indicando que el resultado obtenido es óptimo, ya que no existen más caminos aumentantes en la red residual.
